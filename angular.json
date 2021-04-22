@@ -1,0 +1,150 @@
+{
+  "version": 1,
+  "cli": {
+    "defaultCollection": "@nrwl/angular"
+  },
+  "defaultProject": "playground-app",
+  "schematics": {
+    "@nrwl/angular": {
+      "application": {
+        "linter": "eslint"
+      },
+      "library": {
+        "linter": "eslint"
+      },
+      "storybook-configuration": {
+        "linter": "eslint"
+      }
+    },
+    "@nrwl/angular:application": {
+      "style": "scss",
+      "linter": "eslint",
+      "unitTestRunner": "jest",
+      "e2eTestRunner": "cypress"
+    },
+    "@nrwl/angular:library": {
+      "style": "scss",
+      "linter": "eslint",
+      "unitTestRunner": "jest"
+    },
+    "@nrwl/angular:component": {
+      "style": "scss"
+    }
+  },
+  "projects": {
+    "playground-app": {
+      "projectType": "application",
+      "root": "apps/playground-app",
+      "sourceRoot": "apps/playground-app/src",
+      "prefix": "playground-nx-buildable-lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/apps/playground-app",
+            "index": "apps/playground-app/src/index.html",
+            "main": "apps/playground-app/src/main.ts",
+            "polyfills": "apps/playground-app/src/polyfills.ts",
+            "tsConfig": "apps/playground-app/tsconfig.app.json",
+            "aot": true,
+            "assets": [
+              "apps/playground-app/src/favicon.ico",
+              "apps/playground-app/src/assets"
+            ],
+            "styles": ["apps/playground-app/src/styles.scss"],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "apps/playground-app/src/environments/environment.ts",
+                  "with": "apps/playground-app/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "playground-app:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "playground-app:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "playground-app:build"
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "apps/playground-app/src/**/*.ts",
+              "apps/playground-app/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/apps/playground-app"],
+          "options": {
+            "jestConfig": "apps/playground-app/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "playground-app-e2e": {
+      "root": "apps/playground-app-e2e",
+      "sourceRoot": "apps/playground-app-e2e/src",
+      "projectType": "application",
+      "architect": {
+        "e2e": {
+          "builder": "@nrwl/cypress:cypress",
+          "options": {
+            "cypressConfig": "apps/playground-app-e2e/cypress.json",
+            "tsConfig": "apps/playground-app-e2e/tsconfig.e2e.json",
+            "devServerTarget": "playground-app:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "playground-app:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["apps/playground-app-e2e/**/*.{js,ts}"]
+          }
+        }
+      }
+    }
+  }
+}
