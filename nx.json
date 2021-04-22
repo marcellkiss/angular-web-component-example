@@ -17,6 +17,8 @@
       "tags": [],
       "implicitDependencies": ["playground-app"]
     },
-    "buildable": { "tags": [] }
+    "buildable": { "tags": [] },
+    "wc-app": { "tags": [] },
+    "wc-app-e2e": { "tags": [], "implicitDependencies": ["wc-app"] }
   }
 }
