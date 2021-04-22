@@ -145,6 +145,43 @@
           }
         }
       }
+    },
+    "buildable": {
+      "projectType": "library",
+      "root": "libs/buildable",
+      "sourceRoot": "libs/buildable/src",
+      "prefix": "playground-nx-buildable-lib",
+      "architect": {
+        "build": {
+          "builder": "@nrwl/angular:ng-packagr-lite",
+          "options": {
+            "tsConfig": "libs/buildable/tsconfig.lib.json",
+            "project": "libs/buildable/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "libs/buildable/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/buildable/src/**/*.ts",
+              "libs/buildable/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/buildable"],
+          "options": {
+            "jestConfig": "libs/buildable/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
     }
   }
 }
