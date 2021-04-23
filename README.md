@@ -27,3 +27,9 @@ You can find both of these settings in the `angular.json` file.
 
 - [Multiple Angular Apps on a single page](https://medium.com/swlh/multiple-angular-apps-on-a-single-page-9f49bc863177)
 - [ngx-build-plus](https://github.com/manfredsteyer/ngx-build-plus)
+- [Official Angular Elements Docs](https://angular.io/guide/elements)
+- [Building Web Components with Angular](https://buddy.works/tutorials/building-web-components-with-angular#installing-setting-up-angular-elements)
+
+## Feedback
+
+Did I forget something? Drop a PR or a message: [marcell.kiss.extern@signal-iduna.de](mailto:marcell.kiss.extern@signal-iduna.de)
