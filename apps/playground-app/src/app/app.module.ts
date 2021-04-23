@@ -22,8 +22,4 @@ import { WcWrapperComponent } from './pages/wc-wrapper/wc-wrapper.component';
   bootstrap: [AppComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
-export class AppModule {
-  constructor() {
-    console.log('CONSTRUCTOR of PLAYGROUND-APP');
-  }
-}
+export class AppModule {}

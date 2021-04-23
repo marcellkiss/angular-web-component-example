@@ -15,7 +15,6 @@ import { AppComponent } from './app.component';
 })
 export class WcAppModule {
   constructor(private injector: Injector) {
-    console.log('CONSTRUCTOR of WC-APP');
     // Create custom element
     const AppElement = createCustomElement(AppComponent, { injector });
     // Register the custom element with the browser.

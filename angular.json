@@ -129,6 +129,8 @@
         "build": {
           "builder": "ngx-build-plus:browser",
           "options": {
+            "singleBundle": true,
+            "keepStyles": false,
             "outputPath": "dist/apps/wc-app",
             "index": "apps/wc-app/src/index.html",
             "main": "apps/wc-app/src/main.ts",
@@ -172,6 +174,8 @@
         "serve": {
           "builder": "ngx-build-plus:dev-server",
           "options": {
+            "singleBundle": true,
+            "keepStyles": false,
             "browserTarget": "wc-app:build",
             "port": 4210
           },
