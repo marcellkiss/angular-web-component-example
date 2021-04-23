@@ -1,1 +1,14 @@
-<h1>This is my WC!!!</h1>
+<h1>Web Component App</h1>
+
+<span>@Input message = '{{ message }}'</span>
+<br />
+<br />
+<br />
+<input type="text" [(ngModel)]="inputModel" placeholder="Type here..." />
+<br />
+<br />
+<button (click)="onSubmit()">SUBMIT</button>
+<br />
+<br />
+<br />
+<div>☝️ Press this huge button, to test the @Output event</div>

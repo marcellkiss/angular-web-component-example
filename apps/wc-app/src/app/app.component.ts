@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'wc-app',
@@ -6,5 +6,17 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  title = 'wc-app';
+  @Input()
+  message: string;
+
+  @Output()
+  submitEvent = new EventEmitter();
+
+  public inputModel: string;
+
+  constructor() {}
+
+  public onSubmit() {
+    this.submitEvent.next(this.inputModel);
+  }
 }

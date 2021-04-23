@@ -8,7 +8,20 @@ Run `npx nx serve main-app` and `npx nx serve wc-app`
 
 Playground app will run on `port 4200` and wc-app will run on `port 4210`.
 
+Open `http://localhost:4200` in the browser and have a look at it.
+
 Note: main-app has to be manually refreshed in the browser if a change is made to wc-app.
+
+## Build process
+
+The build process of the `wc-app` uses an npm plugin called `ngx-build-plus` to extend the default behaviour.
+
+We use two flags of the plugin:
+
+- singleBuild
+- keepStyles
+
+You can find both of these settings in the `angular.json` file.
 
 ## Useful links
 
