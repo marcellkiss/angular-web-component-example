@@ -8,7 +8,7 @@ Run `npx nx serve main-app` and `npx nx serve wc-app`
 
 Playground app will run on `port 4200` and wc-app will run on `port 4210`.
 
-Note: main-app has be manually refreshed in the browser if a change was made to wc-app.
+Note: main-app has to be manually refreshed in the browser if a change is made to wc-app.
 
 ## Useful links
 
