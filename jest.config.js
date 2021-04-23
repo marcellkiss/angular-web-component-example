@@ -1,3 +1,3 @@
 module.exports = {
-  projects: ['<rootDir>/apps/playground-app', '<rootDir>/apps/wc-app'],
+  projects: ['<rootDir>/apps/main-app', '<rootDir>/apps/wc-app'],
 };

@@ -1,14 +1,14 @@
 # Web Component as an nx app
 
-The goal of this project is to showcase an nx workspace, where the main-app (`playground-app`) uses a web-component, which is the result of the build process of another app (`wc-app`)
+The goal of this project is to showcase an nx workspace, where the main-app (`main-app`) uses a web-component, which is the result of the build process of another app (`wc-app`)
 
 ## Getting started
 
-Run `npx nx serve playground-app` and `npx nx serve wc-app`
+Run `npx nx serve main-app` and `npx nx serve wc-app`
 
 Playground app will run on `port 4200` and wc-app will run on `port 4210`.
 
-Note: Playground-app has be manually refreshed in the browser if a change was made to wc-app.
+Note: main-app has be manually refreshed in the browser if a change was made to wc-app.
 
 ## Useful links
 

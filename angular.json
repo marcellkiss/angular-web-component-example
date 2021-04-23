@@ -3,7 +3,7 @@
   "cli": {
     "defaultCollection": "@nrwl/angular"
   },
-  "defaultProject": "playground-app",
+  "defaultProject": "main-app",
   "schematics": {
     "@nrwl/angular": {
       "application": {
@@ -32,34 +32,34 @@
     }
   },
   "projects": {
-    "playground-app": {
+    "main-app": {
       "projectType": "application",
-      "root": "apps/playground-app",
-      "sourceRoot": "apps/playground-app/src",
-      "prefix": "playground-app",
+      "root": "apps/main-app",
+      "sourceRoot": "apps/main-app/src",
+      "prefix": "main-app",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/apps/playground-app",
-            "index": "apps/playground-app/src/index.html",
-            "main": "apps/playground-app/src/main.ts",
-            "polyfills": "apps/playground-app/src/polyfills.ts",
-            "tsConfig": "apps/playground-app/tsconfig.app.json",
+            "outputPath": "dist/apps/main-app",
+            "index": "apps/main-app/src/index.html",
+            "main": "apps/main-app/src/main.ts",
+            "polyfills": "apps/main-app/src/polyfills.ts",
+            "tsConfig": "apps/main-app/tsconfig.app.json",
             "aot": true,
             "assets": [
-              "apps/playground-app/src/favicon.ico",
-              "apps/playground-app/src/assets"
+              "apps/main-app/src/favicon.ico",
+              "apps/main-app/src/assets"
             ],
-            "styles": ["apps/playground-app/src/styles.scss"],
+            "styles": ["apps/main-app/src/styles.scss"],
             "scripts": []
           },
           "configurations": {
             "production": {
               "fileReplacements": [
                 {
-                  "replace": "apps/playground-app/src/environments/environment.ts",
-                  "with": "apps/playground-app/src/environments/environment.prod.ts"
+                  "replace": "apps/main-app/src/environments/environment.ts",
+                  "with": "apps/main-app/src/environments/environment.prod.ts"
                 }
               ],
               "optimization": true,
@@ -87,34 +87,34 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "playground-app:build"
+            "browserTarget": "main-app:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "playground-app:build:production"
+              "browserTarget": "main-app:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "playground-app:build"
+            "browserTarget": "main-app:build"
           }
         },
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
             "lintFilePatterns": [
-              "apps/playground-app/src/**/*.ts",
-              "apps/playground-app/src/**/*.html"
+              "apps/main-app/src/**/*.ts",
+              "apps/main-app/src/**/*.html"
             ]
           }
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/apps/playground-app"],
+          "outputs": ["coverage/apps/main-app"],
           "options": {
-            "jestConfig": "apps/playground-app/jest.config.js",
+            "jestConfig": "apps/main-app/jest.config.js",
             "passWithNoTests": true
           }
         }

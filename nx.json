@@ -4,7 +4,7 @@
     ".eslintrc.json": "*"
   },
   "affected": { "defaultBase": "master" },
-  "npmScope": "playground-nx-buildable-lib",
+  "npmScope": "playground-nx-wc-app",
   "tasksRunnerOptions": {
     "default": {
       "runner": "@nrwl/workspace/tasks-runners/default",
@@ -12,7 +12,7 @@
     }
   },
   "projects": {
-    "playground-app": { "tags": [] },
+    "main-app": { "tags": [] },
     "wc-app": { "tags": [] }
   }
 }
