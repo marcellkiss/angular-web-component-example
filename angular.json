@@ -127,7 +127,7 @@
       "prefix": "wc-app",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-angular:browser",
+          "builder": "ngx-build-plus:browser",
           "options": {
             "outputPath": "dist/apps/wc-app",
             "index": "apps/wc-app/src/index.html",
@@ -170,7 +170,7 @@
           }
         },
         "serve": {
-          "builder": "@angular-devkit/build-angular:dev-server",
+          "builder": "ngx-build-plus:dev-server",
           "options": {
             "browserTarget": "wc-app:build",
             "port": 4210
@@ -197,7 +197,7 @@
           }
         },
         "test": {
-          "builder": "@nrwl/jest:jest",
+          "builder": "ngx-build-plus:karma",
           "outputs": ["coverage/apps/wc-app"],
           "options": {
             "jestConfig": "apps/wc-app/jest.config.js",
