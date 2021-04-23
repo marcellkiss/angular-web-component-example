@@ -1,15 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'playground-nx-buildable-lib-wc-wrapper',
+  selector: 'wc-app-wc-wrapper',
   templateUrl: './wc-wrapper.component.html',
-  styleUrls: ['./wc-wrapper.component.scss']
+  styleUrls: ['./wc-wrapper.component.scss'],
 })
 export class WcWrapperComponent implements OnInit {
+  constructor() {}
 
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
+  ngOnInit(): void {}
 }

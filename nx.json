@@ -13,12 +13,6 @@
   },
   "projects": {
     "playground-app": { "tags": [] },
-    "playground-app-e2e": {
-      "tags": [],
-      "implicitDependencies": ["playground-app"]
-    },
-    "buildable": { "tags": [] },
-    "wc-app": { "tags": [] },
-    "wc-app-e2e": { "tags": [], "implicitDependencies": ["wc-app"] }
+    "wc-app": { "tags": [] }
   }
 }

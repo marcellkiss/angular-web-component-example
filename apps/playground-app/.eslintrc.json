@@ -14,7 +14,7 @@
           "error",
           {
             "type": "attribute",
-            "prefix": "playgroundNxBuildableLib",
+            "prefix": "playgroundApp",
             "style": "camelCase"
           }
         ],
@@ -22,7 +22,7 @@
           "error",
           {
             "type": "element",
-            "prefix": "playground-nx-buildable-lib",
+            "prefix": "playground-app",
             "style": "kebab-case"
           }
         ]

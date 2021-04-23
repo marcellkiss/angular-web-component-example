@@ -36,7 +36,7 @@
       "projectType": "application",
       "root": "apps/playground-app",
       "sourceRoot": "apps/playground-app/src",
-      "prefix": "playground-nx-buildable-lib",
+      "prefix": "playground-app",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
@@ -120,85 +120,11 @@
         }
       }
     },
-    "playground-app-e2e": {
-      "root": "apps/playground-app-e2e",
-      "sourceRoot": "apps/playground-app-e2e/src",
-      "projectType": "application",
-      "architect": {
-        "e2e": {
-          "builder": "@nrwl/cypress:cypress",
-          "options": {
-            "cypressConfig": "apps/playground-app-e2e/cypress.json",
-            "tsConfig": "apps/playground-app-e2e/tsconfig.e2e.json",
-            "devServerTarget": "playground-app:serve"
-          },
-          "configurations": {
-            "production": {
-              "devServerTarget": "playground-app:serve:production"
-            }
-          }
-        },
-        "lint": {
-          "builder": "@nrwl/linter:eslint",
-          "options": {
-            "lintFilePatterns": ["apps/playground-app-e2e/**/*.{js,ts}"]
-          }
-        }
-      }
-    },
-    "buildable": {
-      "projectType": "library",
-      "root": "libs/buildable",
-      "sourceRoot": "libs/buildable/src",
-      "prefix": "playground-nx-buildable-lib",
-      "architect": {
-        "build": {
-          "builder": "@nrwl/angular:ng-packagr-lite",
-          "options": {
-            "tsConfig": "libs/buildable/tsconfig.lib.json",
-            "project": "libs/buildable/ng-package.json"
-          },
-          "configurations": {
-            "production": {
-              "tsConfig": "libs/buildable/tsconfig.lib.prod.json"
-            }
-          }
-        },
-        "serve": {
-          "builder": "@angular-devkit/build-angular:dev-server",
-          "options": {
-            "browserTarget": "playground-app:build"
-          },
-          "configurations": {
-            "production": {
-              "browserTarget": "playground-app:build:production"
-            }
-          }
-        },
-        "lint": {
-          "builder": "@nrwl/linter:eslint",
-          "options": {
-            "lintFilePatterns": [
-              "libs/buildable/src/**/*.ts",
-              "libs/buildable/src/**/*.html"
-            ]
-          }
-        },
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/buildable"],
-          "options": {
-            "jestConfig": "libs/buildable/jest.config.js",
-            "passWithNoTests": true
-          }
-        }
-      }
-    },
     "wc-app": {
       "projectType": "application",
       "root": "apps/wc-app",
       "sourceRoot": "apps/wc-app/src",
-      "prefix": "playground-nx-buildable-lib",
+      "prefix": "wc-app",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
@@ -276,32 +202,6 @@
           "options": {
             "jestConfig": "apps/wc-app/jest.config.js",
             "passWithNoTests": true
-          }
-        }
-      }
-    },
-    "wc-app-e2e": {
-      "root": "apps/wc-app-e2e",
-      "sourceRoot": "apps/wc-app-e2e/src",
-      "projectType": "application",
-      "architect": {
-        "e2e": {
-          "builder": "@nrwl/cypress:cypress",
-          "options": {
-            "cypressConfig": "apps/wc-app-e2e/cypress.json",
-            "tsConfig": "apps/wc-app-e2e/tsconfig.e2e.json",
-            "devServerTarget": "wc-app:serve"
-          },
-          "configurations": {
-            "production": {
-              "devServerTarget": "wc-app:serve:production"
-            }
-          }
-        },
-        "lint": {
-          "builder": "@nrwl/linter:eslint",
-          "options": {
-            "lintFilePatterns": ["apps/wc-app-e2e/**/*.{js,ts}"]
           }
         }
       }
