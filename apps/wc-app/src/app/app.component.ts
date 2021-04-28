@@ -1,4 +1,10 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import {
+  Component,
+  EventEmitter,
+  Input,
+  Output,
+  SimpleChanges,
+} from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
@@ -23,5 +29,9 @@ export class AppComponent {
 
   public onSubmit() {
     this.submitEvent.next(this.inputModel);
+  }
+
+  ngOnChanges(changes: SimpleChanges): void {
+    console.log(`ngOnChanges in Web Component`);
   }
 }

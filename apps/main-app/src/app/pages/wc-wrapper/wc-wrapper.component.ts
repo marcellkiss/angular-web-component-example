@@ -15,6 +15,8 @@ export class WcWrapperComponent implements OnInit {
   @ViewChild('wcApp', { read: ElementRef, static: true })
   wcApp: ElementRef;
 
+  public message = "This is a simple test message in WcWrapperComponent's html";
+
   constructor() {}
 
   ngOnInit(): void {}

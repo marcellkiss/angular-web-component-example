@@ -1,4 +1,6 @@
-<wc-app
-  #wcApp
-  message="This is a simple test message in WcWrapperComponent's html"
-></wc-app>
+<wc-app #wcApp [message]="message"></wc-app>
+
+<br />
+<button (click)="message = 'This is the changed message'">
+  Change Message
+</button>
