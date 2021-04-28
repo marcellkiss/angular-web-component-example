@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'wc-app',
@@ -14,7 +15,11 @@ export class AppComponent {
 
   public inputModel: string;
 
-  constructor() {}
+  constructor(private router: Router) {}
+
+  ngOnInit() {
+    this.router.initialNavigation(); // Manually triggering initial navigation for @angular/elements
+  }
 
   public onSubmit() {
     this.submitEvent.next(this.inputModel);

@@ -4,12 +4,43 @@ import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
+import { LinksComponent } from './components/links/links.component';
+import { FirstComponent } from './pages/first/first.component';
+import { HomeComponent } from './pages/home/home.component';
+import { SecondComponent } from './pages/second/second.component';
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [
+    AppComponent,
+    HomeComponent,
+    FirstComponent,
+    SecondComponent,
+    LinksComponent,
+  ],
   imports: [
     BrowserModule,
-    RouterModule.forRoot([], { initialNavigation: 'enabled' }),
+    // RouterModule.forChild(
+    // RouterTestingModule.withRoutes(
+    RouterModule.forRoot(
+      [
+        {
+          path: '',
+          component: HomeComponent,
+          outlet: 'wcRouter',
+        },
+        {
+          path: 'first',
+          component: FirstComponent,
+          outlet: 'wcRouter',
+        },
+        {
+          path: 'second',
+          component: SecondComponent,
+          outlet: 'wcRouter',
+        },
+      ],
+      { initialNavigation: 'enabled' }
+    ),
     FormsModule,
   ],
   providers: [],
