@@ -9,16 +9,23 @@
 <p>
   This <span class="hl">AppComponent</span> renders a
   <span class="hl">router-outlet</span>, where the default route is the
-  <span class="hl">WcWrapperComponent</span>
+  <span class="hl">WebComponentHost</span>
 </p>
 
 <p>
-  <span class="hl">WcWrapperComponent</span> renders the
+  <span class="hl">WebComponentHost</span> renders the
   <span class="hl">wc-app</span> as a Web Component `<span class="hl"
     >&lt;wc-app&gt;</span
   >`
 </p>
 
-<p>Here it is:</p>
-
-<router-outlet></router-outlet>
+<br />
+Routing in Main App:
+<br />
+Links:
+<a [routerLink]="['../web-component-host']">Web Component Host page</a> |
+<a [routerLink]="['../simple-page']">Simple page</a>
+<br />
+<div class="router-container">
+  <router-outlet></router-outlet>
+</div>

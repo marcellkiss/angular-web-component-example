@@ -1,0 +1,31 @@
+<div class="app">
+  <h2>Web Component App</h2>
+
+  Routing in Web Component App:
+  <br />
+
+  <wc-app-links></wc-app-links>
+  <br />
+
+  <div class="router-outlet-container">
+    <router-outlet></router-outlet>
+  </div>
+  <br />
+  <br />
+  <div class="communication-example">
+    <span>@Input message = '{{ message }}'</span>
+    <br />
+    <br />
+    <br />
+    <input type="text" [(ngModel)]="inputModel" placeholder="Type here..." />
+    <br />
+    <br />
+    <button (click)="onSubmit()">SUBMIT</button>
+    <br />
+    <br />
+    <div>☝️ Press this huge button, to test the @Output event</div>
+
+    <br />
+    <br />
+  </div>
+</div>
