@@ -26,17 +26,14 @@ import { SecondComponent } from './pages/second/second.component';
         {
           path: '',
           component: HomeComponent,
-          outlet: 'wcRouter',
         },
         {
           path: 'first',
           component: FirstComponent,
-          outlet: 'wcRouter',
         },
         {
           path: 'second',
           component: SecondComponent,
-          outlet: 'wcRouter',
         },
       ],
       { initialNavigation: 'enabled' }

@@ -31,6 +31,7 @@ You can find both of these settings in the `angular.json` file.
 - [Building Web Components with Angular](https://buddy.works/tutorials/building-web-components-with-angular#installing-setting-up-angular-elements)
 - [Routing artcile](https://medium.com/@timon.grassl/how-to-use-routing-in-angular-web-components-c6a76449cdb)
 - [ngx routing plugin](https://www.npmjs.com/package/ngx-elements-router)
+- [Routing within a Web Component](https://github.com/fboeller/ngx-elements-router)
 
 ## Feedback
 

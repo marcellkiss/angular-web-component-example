@@ -1,5 +1,3 @@
-<router-outlet name="wcRouter"></router-outlet>
-
 <div class="app">
   <h3>Web Component App</h3>
 
@@ -13,6 +11,13 @@
   <button (click)="onSubmit()">SUBMIT</button>
   <br />
   <br />
-  <br />
   <div>☝️ Press this huge button, to test the @Output event</div>
+
+  <br />
+  <br />
+  Example for routing:
+  <br />
+  <div class="router-outlet-container">
+    <router-outlet></router-outlet>
+  </div>
 </div>
