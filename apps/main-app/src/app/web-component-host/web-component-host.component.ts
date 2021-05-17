@@ -20,6 +20,7 @@ export class WebComponentHostComponent implements OnInit {
   public message = "This is a simple test message in WcWrapperComponent's html";
   public routeInput: string;
   private subs: Subscription[] = [];
+  private WEB_COMPONENT_BASE_URL = '/web-component-host';
 
   constructor(private route: ActivatedRoute, private router: Router) {}
 
@@ -37,8 +38,8 @@ export class WebComponentHostComponent implements OnInit {
 
   private syncRouteInput() {
     const routeSub = this.route.url.subscribe((url) => {
-      // Couldn't this be more straigh-forward?
-      this.routeInput = this.router.url.split('/web-component-host')[1];
+      // Pass on just the relative part, not the whole
+      this.routeInput = this.router.url.split(this.WEB_COMPONENT_BASE_URL)[1];
     });
 
     this.subs.push(routeSub);
@@ -59,17 +60,17 @@ export class WebComponentHostComponent implements OnInit {
     );
 
     this.wcApp.nativeElement.addEventListener('routeChange', (event: any) => {
+      // This is the relative url, compared to the Web Component
       console.log(`>>> [Platform]: new route arrived`, event.detail);
       this.navigateToUrl(event.detail);
     });
   }
 
-  private navigateToUrl(route: string): void {
-    if (route && route.startsWith('/')) {
-      console.log('navigating to', { route });
-      // this.router.navigateByUrl(route, {
-      //   replaceUrl: true, //event.replaceUrl || false,
-      // });
+  private navigateToUrl(relativeRoute: string): void {
+    if (relativeRoute && relativeRoute.startsWith('/')) {
+      this.router.navigateByUrl(this.WEB_COMPONENT_BASE_URL + relativeRoute, {
+        replaceUrl: true, //event.replaceUrl || false,
+      });
     } else {
       console.warn(`Invalid router event.`, event);
     }
