@@ -9,7 +9,7 @@ if (environment.production) {
 
 // Include Web Component script
 const scriptEl = document.createElement('script');
-scriptEl.src = 'http://localhost:4210/main.js';
+scriptEl.src = environment.wcAppScriptPath;
 document.head.appendChild(scriptEl);
 
 platformBrowserDynamic()

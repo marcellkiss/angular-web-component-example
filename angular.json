@@ -131,7 +131,7 @@
           "options": {
             "singleBundle": true,
             "keepStyles": false,
-            "outputPath": "dist/apps/wc-app",
+            "outputPath": "dist/apps/main-app/wc-app",
             "index": "apps/wc-app/src/index.html",
             "main": "apps/wc-app/src/main.ts",
             "polyfills": "apps/wc-app/src/polyfills.ts",
@@ -150,7 +150,7 @@
                 }
               ],
               "optimization": true,
-              "outputHashing": "all",
+              "outputHashing": "none",
               "sourceMap": false,
               "namedChunks": false,
               "extractLicenses": true,

@@ -4,6 +4,7 @@
 
 export const environment = {
   production: false,
+  wcAppScriptPath: 'http://localhost:4210/main.js',
 };
 
 /*

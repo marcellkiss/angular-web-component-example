@@ -9,7 +9,7 @@
     "start": "run-p start:main start:wc",
     "start:main": "ng serve main-app",
     "start:wc": "ng serve wc-app",
-    "build": "ng build",
+    "build": "npx nx run main-app:build:production && npx nx run wc-app:build:production",
     "test": "ng test",
     "lint": "nx workspace-lint && ng lint",
     "e2e": "ng e2e",
