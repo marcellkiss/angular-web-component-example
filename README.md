@@ -35,4 +35,4 @@ You can find both of these settings in the `angular.json` file.
 
 ## Feedback
 
-Did I forget something? Drop a PR or a message: [marcell.kiss.extern@signal-iduna.de](mailto:marcell.kiss.extern@signal-iduna.de)
+Did I forget something? Drop a PR or a message: [marcellkiss@budacode.com](mailto:marcellkiss@budacode.com)
