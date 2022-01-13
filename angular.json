@@ -173,7 +173,7 @@
           "outputs": ["{options.outputFile}"]
         },
         "test": {
-          "builder": "ngx-build-plus:karma",
+          "builder": "@nrwl/jest:jest",
           "outputs": ["coverage/apps/wc-app"],
           "options": {
             "jestConfig": "apps/wc-app/jest.config.js",
