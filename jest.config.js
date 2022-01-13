@@ -1,3 +1,3 @@
-module.exports = {
-  projects: ['<rootDir>/apps/main-app', '<rootDir>/apps/wc-app'],
-};
+const { getJestProjects } = require('@nrwl/jest');
+
+module.exports = { projects: [...getJestProjects(), '<rootDir>/apps/wc-app'] };
