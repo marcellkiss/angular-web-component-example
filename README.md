@@ -1,4 +1,4 @@
-# Web Component as an nx app
+# Angular Web Component Example - nx app
 
 The goal of this project is to showcase an nx workspace, where the main-app (`main-app`) uses a web-component, which is the result of the build process of another app (`wc-app`)
 
