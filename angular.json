@@ -56,7 +56,8 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "main-app:build"
+            "browserTarget": "main-app:build",
+            "liveReload": false
           },
           "configurations": {
             "production": {
