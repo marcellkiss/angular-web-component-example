@@ -1,4 +1,4 @@
-import { ApplicationRef, Injector, NgModule } from '@angular/core';
+import { Injector, NgModule } from '@angular/core';
 import { createCustomElement } from '@angular/elements';
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
@@ -28,6 +28,4 @@ export class WcAppModule {
     // Register the custom element with the browser.
     customElements.define('wc-app', AppElement);
   }
-
-  ngDoBootstrap(appRef: ApplicationRef): void {}
 }
