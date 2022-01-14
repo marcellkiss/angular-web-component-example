@@ -145,6 +145,7 @@
         "serve": {
           "builder": "ngx-build-plus:dev-server",
           "options": {
+            "singleBundle": true,
             "browserTarget": "wc-app:build",
             "port": 4210
           },
