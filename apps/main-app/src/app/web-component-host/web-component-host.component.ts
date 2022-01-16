@@ -1,7 +1,9 @@
 import {
+  AfterViewInit,
   Component,
   ElementRef,
   HostListener,
+  OnDestroy,
   OnInit,
   ViewChild,
 } from '@angular/core';
@@ -13,7 +15,9 @@ import { Subscription } from 'rxjs';
   templateUrl: './web-component-host.component.html',
   styleUrls: ['./web-component-host.component.scss'],
 })
-export class WebComponentHostComponent implements OnInit {
+export class WebComponentHostComponent
+  implements OnInit, AfterViewInit, OnDestroy
+{
   @ViewChild('wcApp', { read: ElementRef, static: true })
   wcApp: ElementRef;
 
