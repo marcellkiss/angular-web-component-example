@@ -34,7 +34,7 @@ export class WcAppComponent implements OnInit, OnChanges {
   ngOnChanges(changes: SimpleChanges): void {
     console.log(`ngOnChanges in Web Component`);
 
-    // Reac on route changes
+    // React on route changes
     if (changes['route']) {
       console.log(
         `>>> [WebComponent]: Incoming route change: ${changes['route'].currentValue}`

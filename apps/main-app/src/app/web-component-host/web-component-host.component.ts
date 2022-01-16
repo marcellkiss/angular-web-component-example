@@ -1,12 +1,4 @@
-import {
-  AfterViewInit,
-  Component,
-  ElementRef,
-  HostListener,
-  OnDestroy,
-  OnInit,
-  ViewChild,
-} from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 
@@ -15,12 +7,7 @@ import { Subscription } from 'rxjs';
   templateUrl: './web-component-host.component.html',
   styleUrls: ['./web-component-host.component.scss'],
 })
-export class WebComponentHostComponent
-  implements OnInit, AfterViewInit, OnDestroy
-{
-  @ViewChild('wcApp', { read: ElementRef, static: true })
-  wcApp: ElementRef;
-
+export class WebComponentHostComponent implements OnInit, OnDestroy {
   public message = "This is a simple test message in WcWrapperComponent's html";
   public routeInput: string;
   private subs: Subscription[] = [];
@@ -30,10 +17,6 @@ export class WebComponentHostComponent
 
   ngOnInit(): void {
     this.syncRouteInput();
-  }
-
-  ngAfterViewInit(): void {
-    this.listenToWebComponentEvents();
   }
 
   ngOnDestroy(): void {
@@ -49,28 +32,14 @@ export class WebComponentHostComponent
     this.subs.push(routeSub);
   }
 
-  // Note: This won't work, as Angular @Output events won't bubble up by default
-  // listenToWebComponentEvents() is the alternative solution
-  @HostListener('submitEvent', ['$event.detail'])
   public onSubmitEvent(submitValue: string) {
     alert(
       `The event is catched in WcWrapperComponent.\nThe value was: ${submitValue}`
     );
   }
 
-  private listenToWebComponentEvents() {
-    this.wcApp.nativeElement.addEventListener('submitEvent', (event: any) =>
-      this.onSubmitEvent(event.detail)
-    );
-
-    this.wcApp.nativeElement.addEventListener('routeChange', (event: any) => {
-      // This is the relative url, compared to the Web Component
-      console.log(`>>> [Platform]: new route arrived`, event.detail);
-      this.navigateToUrl(event.detail);
-    });
-  }
-
-  private navigateToUrl(relativeRoute: string): void {
+  public onRouteChange(relativeRoute: string): void {
+    console.log(`>>> [Platform]: new route arrived`, relativeRoute);
     if (relativeRoute && relativeRoute.startsWith('/')) {
       this.router.navigateByUrl(this.WEB_COMPONENT_BASE_URL + relativeRoute, {
         replaceUrl: true, //event.replaceUrl || false,
