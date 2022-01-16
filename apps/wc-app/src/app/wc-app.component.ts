@@ -2,6 +2,8 @@ import {
   Component,
   EventEmitter,
   Input,
+  OnChanges,
+  OnInit,
   Output,
   SimpleChanges,
 } from '@angular/core';
@@ -12,7 +14,7 @@ import { Router, RoutesRecognized } from '@angular/router';
   templateUrl: './wc-app.component.html',
   styleUrls: ['./wc-app.component.scss'],
 })
-export class WcAppComponent {
+export class WcAppComponent implements OnInit, OnChanges {
   // Routing i/o
   @Input() route: string;
   @Output() routeChange: EventEmitter<string> = new EventEmitter();
