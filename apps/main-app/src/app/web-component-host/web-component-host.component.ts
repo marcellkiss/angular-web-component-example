@@ -8,7 +8,7 @@ import { Subscription } from 'rxjs';
   styleUrls: ['./web-component-host.component.scss'],
 })
 export class WebComponentHostComponent implements OnInit, OnDestroy {
-  public message = "This is a simple test message in WcWrapperComponent's html";
+  public message = '';
   public outputMessage = '';
   public routeInput: string;
   private subs: Subscription[] = [];
@@ -50,6 +50,17 @@ export class WebComponentHostComponent implements OnInit, OnDestroy {
   }
 
   public onChangeMessage() {
-    this.message = `Message number ${Math.floor(Math.random() * 100)}`;
+    const words = [
+      'Hallo Welt',
+      'Moin Welt',
+      'Grüß Gott Welt',
+      'Szia Világ',
+      'Hello World',
+      'Hola Mundo',
+      'Bonjour le monde',
+      'Ciao mondo',
+    ];
+    const randomIndex = Math.floor(Math.random() * words.length);
+    this.message = `${words[randomIndex]}`;
   }
 }
