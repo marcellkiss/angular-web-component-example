@@ -51,14 +51,14 @@ export class WebComponentHostComponent implements OnInit, OnDestroy {
 
   public onChangeMessage() {
     const words = [
-      'Hallo Welt',
-      'Moin Welt',
-      'Grüß Gott Welt',
-      'Szia Világ',
-      'Hello World',
-      'Hola Mundo',
-      'Bonjour le monde',
-      'Ciao mondo',
+      'Hallo Welt!',
+      'Moin Welt!',
+      'Grüß Gott Welt!',
+      'Szia Világ!',
+      'Hello World!',
+      'Hola Mundo!',
+      'Bonjour le monde!',
+      'Ciao mondo!',
     ];
     const randomIndex = Math.floor(Math.random() * words.length);
     this.message = `${words[randomIndex]}`;
