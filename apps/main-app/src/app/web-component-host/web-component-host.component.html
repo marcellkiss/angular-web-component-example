@@ -10,4 +10,12 @@ This is the Web Component:
 ></wc-app>
 
 <br />
-<button (click)="onChangeMessage()">Change Message</button>
+<h3>@Input</h3>
+<button (click)="onChangeMessage()">
+  Generate random message for WebComponent
+</button>
+
+<h3>@Output</h3>
+<p>
+  Message from WebComponent: <strong>{{ outputMessage }}</strong>
+</p>

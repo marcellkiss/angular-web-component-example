@@ -9,6 +9,7 @@ import { Subscription } from 'rxjs';
 })
 export class WebComponentHostComponent implements OnInit, OnDestroy {
   public message = "This is a simple test message in WcWrapperComponent's html";
+  public outputMessage = '';
   public routeInput: string;
   private subs: Subscription[] = [];
   private WEB_COMPONENT_BASE_URL = '/web-component-host';
@@ -33,9 +34,8 @@ export class WebComponentHostComponent implements OnInit, OnDestroy {
   }
 
   public onSubmitEvent(submitValue: string) {
-    alert(
-      `The event is catched in WcWrapperComponent.\nThe value was: ${submitValue}`
-    );
+    console.log({ submitValue });
+    this.outputMessage = `${submitValue}`;
   }
 
   public onRouteChange(relativeRoute: string): void {

@@ -13,17 +13,18 @@
   <br />
   <br />
   <div class="communication-example">
-    <span>@Input message = '{{ message }}'</span>
+    <h3>@Input</h3>
+    <span>
+      message from host: <strong>{{ message }} </strong>
+    </span>
     <br />
     <br />
-    <br />
+    <h3>@Output</h3>
     <input type="text" [(ngModel)]="inputModel" placeholder="Type here..." />
     <br />
     <br />
-    <button (click)="onSubmit()">SUBMIT</button>
+    <button (click)="onSubmit()">Send message to host</button>
     <br />
-    <br />
-    <div>☝️ Press this huge button, to test the @Output event</div>
 
     <br />
     <br />
