@@ -99,7 +99,7 @@
       "prefix": "wc-app",
       "architect": {
         "build": {
-          "builder": "ngx-build-plus:browser",
+          "builder": "ngc-esbuild-devkit:build",
           "options": {
             "singleBundle": true,
             "outputPath": "dist/apps/main-app/wc-app",
