@@ -13,8 +13,8 @@ export class MultiLocationStrategy extends LocationStrategy {
   private _baseHref: string;
 
   constructor(
-    private _platformLocation: PlatformLocation,
-    @Optional() @Inject(APP_BASE_HREF) href?: string
+    @Inject(PlatformLocation) private _platformLocation: PlatformLocation,
+    @Optional() @Inject(APP_BASE_HREF) href?: string,
   ) {
     super();
 
