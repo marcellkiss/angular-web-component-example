@@ -28,7 +28,7 @@ export class NoopLocationStrategy extends LocationStrategy {
   private readonly baseHref: string;
 
   constructor(
-    private platformLocation: PlatformLocation,
+    @Inject(PlatformLocation) private platformLocation: PlatformLocation,
     @Optional() @Inject(APP_BASE_HREF) baseHref?: string
   ) {
     super();

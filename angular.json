@@ -1,4 +1,7 @@
 {
+  "cli": {
+    "analytics": "6ccf78d0-f233-41da-b798-ddce02183fca"
+  },
   "version": 1,
   "projects": {
     "main-app": {
@@ -54,7 +57,7 @@
           }
         },
         "serve": {
-          "builder": "@angular-devkit/build-angular:dev-server",
+          "builder": "ngc-esbuild-devkit:serve",
           "options": {
             "browserTarget": "main-app:build",
             "liveReload": false
@@ -143,7 +146,7 @@
           }
         },
         "serve": {
-          "builder": "ngx-build-plus:dev-server",
+          "builder": "ngc-esbuild-devkit:serve",
           "options": {
             "singleBundle": true,
             "browserTarget": "wc-app:build",
